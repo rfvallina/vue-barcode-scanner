@@ -77,7 +77,10 @@ const VueBarcodeScanner = {
         let barcodeIdentifier = event.target.attributes.getNamedItem('data-barcode');
         if (barcodeIdentifier && (event.keyCode === 13 || event.keyCode === 9) && attributes.barcode !== '') {
           // scanner is done and trigger Enter/Tab then clear barcode and play the sound if it's set as true
-          attributes.callback(attributes.barcode)
+          
+          //attributes.callback(attributes.barcode)
+          // CHANGED (2018-02-26) TO GET THE CURRENT FIELD VALUE INSTEAD OF THE CACHED VALUE. THIS IS TO BE ABLE TO GET THE VALUE WHEN THE USER PASTES THE CODE
+          attributes.callback(event.target.value);
           // backup the barcode
           attributes.previousCode = attributes.barcode
           // clear textbox
