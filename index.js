@@ -75,7 +75,7 @@ const VueBarcodeScanner = {
       if (checkInputElapsedTime(Date.now())) {
         // check if field has 'data-barcode' attribute
         let barcodeIdentifier = event.target.attributes.getNamedItem('data-barcode');
-        if (barcodeIdentifier && (event.keyCode === 13 || event.keyCode === 9) && attributes.barcode !== '') {
+        if (barcodeIdentifier && (event.keyCode === 13 || event.keyCode === 9)) {
           // scanner is done and trigger Enter/Tab then clear barcode and play the sound if it's set as true
           
           //attributes.callback(attributes.barcode)
